@@ -1,15 +1,15 @@
 birthday_dictionary= {
-    "RUHI KAPOOR":26/01,
-    "SUNIL KUMAR":15/06,
-    "RASHMI PANDEY":04/01,
-    "SHIPRA CHAUHAN":24/11
+    "RUHI KAPOOR":26.01,
+    "SUNIL KUMAR":15.08,
+    "RASHMI PANDEY":04.01,
+    "SHIPRA CHAUHAN":24.11
     }
 print "welcome to the birthday dictionary"
 print "enter\n 1. if u want to add a friends birthday \n if u want to check your friend birthday"
 choice=int(raw_input("make your choice (1/2):"))
 if choice == 1 :
     key = raw_input("enter name")
-    value = raw_input("enter date")
+    value = raw_input("enter date FORMAT(date.month)")
     birthday_dictionary.update({key: value})
 
 if choice == 2 :
@@ -18,6 +18,6 @@ if choice == 2 :
          print key + "\n"
 key=raw_input("who's birthday you want to know :")
 if key in birthday_dictionary :
-    print "BIRTHDAY IS ON :",birthday_dictionary[key]
+    print key,"BIRTHDAY IS ON :",birthday_dictionary[key]
 else:
     print "invalid name"
