@@ -1,5 +1,6 @@
 num=int(raw_input("enter your number :"))
 factorial=1
+list=[]
 if num < 0:
    print("Sorry, factorial does not exist for negative numbers")
 elif num == 0:
@@ -7,4 +8,5 @@ elif num == 0:
 else:
    for i in range(1,num + 1):
        factorial = factorial*i
-       print(factorial)
+       list.append(str(factorial))
+print ','.join(list)
