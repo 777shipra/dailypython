@@ -1,5 +1,7 @@
 number=raw_input("enter the numbers")
+num=number.split(",")
 list=[]
-list.append(number)
+for i in num :
+  list.append(i)
 print list
 print  tuple(number.split(","))
