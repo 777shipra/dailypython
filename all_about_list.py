@@ -14,10 +14,10 @@ print my_list
 #append() and extend()
 list.append('brother')
 print list
-list.extend('sister','fear')
+list.extend('sister')
 print list
 #insert() into list at desired position
-list.insert(1)
+list.insert(1, "hello")
 print list
 list[2]=[198,112]
 print list
