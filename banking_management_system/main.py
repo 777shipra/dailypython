@@ -31,9 +31,12 @@ def deposit_amount():
     entered_acc_no=int(raw_input("enter the account number:"))
     amount_to_deposit=int(raw_input("enter the amount to be deposit:"))
     for dict in record:
-        for acc_no in dict:
-            if entered_acc_no==acc_no:
-                print "code"
+        for key,values in dict:
+            if entered_acc_no==dict['acc_no']:
+                print dict
+                dict['acc_amount'] = dict['acc_amount'] + entered_acc_no
+                print "after deposit amount is :", dict['acc_amount']
+                break
             else:
                 print "<-----INVALID ACCOUNT NUMBER----->"
 print "Welcome to BANKING MANAGEMENT SYSTEM \n <---------------MAIN MENU--------------->"
