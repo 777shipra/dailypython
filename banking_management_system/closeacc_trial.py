@@ -5,5 +5,6 @@ for dict in list:
         if dict['acc.no']==acc_no:
             list.remove(dict)
             print "<------------ACCOUNT CLOSED------------->"
-            print list
-            break
+            exit()
+        else:
+            print "<----------INVALID ACCOUNT NUMBER---------->"

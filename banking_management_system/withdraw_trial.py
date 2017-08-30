@@ -8,10 +8,10 @@ for dict in list:
             if dict['acc amount']>acc_amount:
                 dict['acc amount']=dict['acc amount']-acc_amount
                 print "amount after withdraw :",dict['acc amount']
-                break
+                exit()
             else:
                 print "amount is less in account"
-                break
+                exit()
         else:
             print "INVALID ACCOUNT NUMBER"
-            break
+            exit()
