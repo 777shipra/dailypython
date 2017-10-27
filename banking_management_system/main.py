@@ -1,26 +1,21 @@
-record=[]
+from globals import Record,record
 def create_account():
-    dict={
-        "account number":0,
-        "account holder name":"",
-        "account type":"",
-        "account amount":0,
 
-    }
     print "<--------WELCOME , CREATE YOUR ACCOUNT------->"
-    dict['acc_no']=raw_input("enter the account number:")
-    if (len(dict['acc_no'])>0 and len(dict['acc_no'])==10):
-             dict['acc_name']=raw_input("enter the name of the account holder:")
+    new_Record=Record(" ",0," ",0)
+    new_Record.number=raw_input("enter the account number:")
+    if (len(new_Record.number)>0 and len(new_Record.number)==10):
+             new_Record.name=raw_input("enter the name of the account holder:")
     else:
             print "<---INVALID ACCOUNT NUMBER,PLEASE TRY AGAIN--->"
-    if(len(dict['acc_no'])>0 and len(dict['acc_no'])==10):
-        dict['acc_type']=raw_input("enter the type of account (C/S):")
-        if (len(dict['acc_type'])==1 and dict['acc_type']=="c" or dict['acc_type']=="C" or dict['acc_type']=="S"or dict['acc_type']=="s"):
-            dict['acc_amount']=int(raw_input("enter the amount \n (NOTE:amount>=500 for S and amount>=1000 for C): "))
-            if ((dict['acc_type']=="s"or dict['acc_type']=="S") and dict['acc_amount']>=500) or ((dict['acc_type']=="c" or dict['acc_type']=="C") and dict['acc_amount']>=1000):
+    if(len(new_Record.number)>0 and len(new_Record.number)==10):
+        new_Record.type=raw_input("enter the type of account (C/S):")
+        if (len(new_Record.type)==1 and (new_Record.type=="c" or new_Record.type=="C" or new_Record.type=="S"or new_Record.type=="s")):
+            new_Record.amount=int(raw_input("enter the amount \n (NOTE:amount>=500 for S and amount>=1000 for C): "))
+            if ((new_Record.type=="s"or new_Record.type=="S") and new_Record.amount>=500) or ((new_Record.type=="c" or new_Record.type=="C") and new_Record.amount>=1000):
                 print "<-----ACCOUNT CREATED----->"
-                record.append(dict)
-                print record
+                record.append(new_Record)
+                print str(new_Record.name)+" whose account number "+str(new_Record.number)+" of account type "+str(new_Record.type)+" with balance "+str(new_Record.amount)+" is added successfully"
 
 
             else:
@@ -30,12 +25,12 @@ def create_account():
 def deposit_amount():
     entered_acc_no=int(raw_input("enter the account number:"))
     amount_to_deposit=int(raw_input("enter the amount to be deposit:"))
-    for dict in record:
-        for key,values in dict:
-            if entered_acc_no==dict['acc_no']:
+    for number in record:
+        for account_number in number:
+            if entered_acc_no==account_number:#problem
                 print dict
-                dict['acc_amount'] = dict['acc_amount'] + entered_acc_no
-                print "after deposit amount is :", dict['acc_amount']
+                record.amount = record.amount + entered_acc_no
+                print "after deposit amount is :", record.amount
                 break
             else:
                 print "<-----INVALID ACCOUNT NUMBER----->"
